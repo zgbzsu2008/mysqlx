@@ -57,7 +57,7 @@ int main(int argc)
     Collection::createCollection(): Represents a collection of documents in a schema
     */
     Schema sch = sess.getSchema("mydb");
-    Collection coll = sch.createCollection("c1", true);
+    Collection coll = sch.createCollection("mycoll", true);
 
     cout << "Inserting documents..." << endl;
 
@@ -139,10 +139,9 @@ int main(int argc)
           cout << "  " << toy << endl;
         }
       }
-
       cout << endl;
     }
-
+    // sch.dropCollection("mycoll");
     cout << "Done!" << endl;
   } catch (const mysqlx::Error &err) {
     cout << "ERROR: " << err << endl;
